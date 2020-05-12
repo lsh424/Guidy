@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.0.2)
+  - ARCL (1.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - ARCL
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ARCL
+
+SPEC CHECKSUMS:
+  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  ARCL: db48b6927d6f3f49f29568295ed91c94ab8d4aab
+
+PODFILE CHECKSUM: 700dab13c66cf1eff4f29688588c27696c499e3d
+
+COCOAPODS: 1.8.4
