@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		D1537C8F246D2991004A6BEF /* StrokeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C8D246D2991004A6BEF /* StrokeAnchor.swift */; };
 		D1537C90246D2991004A6BEF /* SphereNodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C8E246D2991004A6BEF /* SphereNodes.swift */; };
 		D1537C92246D299F004A6BEF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C91246D299F004A6BEF /* Utilities.swift */; };
+		D1537C94246D3846004A6BEF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C93246D3846004A6BEF /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		D1537C8D246D2991004A6BEF /* StrokeAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeAnchor.swift; sourceTree = "<group>"; };
 		D1537C8E246D2991004A6BEF /* SphereNodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereNodes.swift; sourceTree = "<group>"; };
 		D1537C91246D299F004A6BEF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D1537C93246D3846004A6BEF /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		DFCE8D10D3EDD14FD948C255 /* libPods-Guidy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Guidy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				D1537C8E246D2991004A6BEF /* SphereNodes.swift */,
 				D1537C8D246D2991004A6BEF /* StrokeAnchor.swift */,
 				D1537C91246D299F004A6BEF /* Utilities.swift */,
+				D1537C93246D3846004A6BEF /* RoundButton.swift */,
 				D1537C5F246ABE4A004A6BEF /* Main.storyboard */,
 				D1537C65246ABE4F004A6BEF /* Assets.xcassets */,
 				D1537C67246ABE4F004A6BEF /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				D1537C64246ABE4A004A6BEF /* Guidy.xcdatamodeld in Sources */,
 				D1537C82246D28C6004A6BEF /* UIImage.swift in Sources */,
 				D1537C5E246ABE4A004A6BEF /* ViewController.swift in Sources */,
+				D1537C94246D3846004A6BEF /* RoundButton.swift in Sources */,
 				D1537C8A246D296C004A6BEF /* DrawingViewController.swift in Sources */,
 				D1537C88246D28C6004A6BEF /* Float4x4+Extensions.swift in Sources */,
 				D1537C92246D299F004A6BEF /* Utilities.swift in Sources */,
