@@ -12,10 +12,21 @@ import SceneKit
 import CoreLocation
 import Alamofire
 
+enum optionType {
+    case size
+    case color
+}
+
 class DrawingViewController: UIViewController,ARSCNViewDelegate {
     
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet var undoButton: UIButton!
+    @IBOutlet weak var drawingOptionStackView: UIStackView!
+    
+    @IBOutlet weak var drawingOptionButton: UIButton!
+    
+    
+    @IBOutlet var dotSizeAndColorButtons: [RoundButton]!
     
     var previousPoint: SCNVector3?
     var currentFingerPosition: CGPoint?
@@ -34,12 +45,15 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
     
     var location: CLLocationCoordinate2D?
     var altitude: CLLocationDistance?
+    var optionType: optionType?
+    var optionButtonColor: UIColor? = .white
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressUndoButton))
-        undoButton.addGestureRecognizer(longPressGesture)
+        let longPressGestureForDrawing = UILongPressGestureRecognizer(target: self, action: #selector(longPressOptionButton))
+        
+        drawingOptionButton.addGestureRecognizer(longPressGestureForDrawing)
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -67,7 +81,17 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
 //                scneView.addSubview(sphereCountLabel)
     }
     
-    @objc func longPressUndoButton(gesture: UILongPressGestureRecognizer) {
+    @objc func longPressOptionButton(gesture: UILongPressGestureRecognizer) {
+        drawingOptionStackView.isHidden = false
+        optionType = .color
+        
+        dotSizeAndColorButtons[0].backgroundColor = .red
+        dotSizeAndColorButtons[1].backgroundColor = .blue
+        dotSizeAndColorButtons[2].backgroundColor = .black
+        dotSizeAndColorButtons[3].backgroundColor = .white
+    }
+    
+    @IBAction func didPressDelete(_ sender: Any) {
         for strokeAnchorID in strokeAnchorIDs {
             if let strokeAnchor = anchorForID(strokeAnchorID) {
                 sceneView.session.remove(anchor: strokeAnchor)
@@ -75,6 +99,7 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
         }
         currentStrokeAnchorNode = nil
     }
+    
 
     @IBAction func didPressGallery(_ sender: Any) {
        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchArVC") as! SearchARViewContollerViewController
@@ -118,6 +143,54 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
         // add this?
         currentStrokeAnchorNode = nil
     }
+    
+    @IBAction func didPressDrawingOption(_ sender: Any) {
+        drawingOptionStackView.isHidden = false
+        optionType = .size
+        
+        for button in dotSizeAndColorButtons {
+            button.backgroundColor = optionButtonColor
+        }
+    }
+    
+    
+    @IBAction func didPressDotAndColor(_ sender: RoundButton) {
+        
+        if optionType == .size {
+            switch sender {
+            case dotSizeAndColorButtons[0]:
+                radius = 0.01
+            case dotSizeAndColorButtons[1]:
+                radius = 0.015
+            case dotSizeAndColorButtons[2]:
+                radius = 0.02
+            default:
+                radius = 0.025
+            }
+        } else if optionType == .color {
+            switch sender {
+            case dotSizeAndColorButtons[0]:
+                currentStrokeColor = .red
+                optionButtonColor = .red
+            case dotSizeAndColorButtons[1]:
+                currentStrokeColor = .blue
+                optionButtonColor = .blue
+            case dotSizeAndColorButtons[2]:
+                currentStrokeColor = .black
+                optionButtonColor = .black
+            default:
+                currentStrokeColor = .white
+                optionButtonColor = .white
+            }
+        }
+        
+        drawingOptionButton.tintColor = optionButtonColor
+        drawingOptionStackView.isHidden = true
+    }
+    
+    
+
+    
     
     
     
@@ -186,7 +259,6 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
     
     func createSphereAndInsert(atPosition position: SCNVector3, andAddToStrokeAnchor strokeAnchor: StrokeAnchor){
         guard let currentStrokeNode = currentStrokeAnchorNode else {return}
-        
         let referenceSphereNode = getReferenceSphereNode(forStrokeColor: strokeAnchor.color)
         let newSphereNode = referenceSphereNode.clone()
         
