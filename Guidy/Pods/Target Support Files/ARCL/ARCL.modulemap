@@ -1,4 +1,4 @@
-framework module ARCL {
+module ARCL {
   umbrella header "ARCL-umbrella.h"
 
   export *

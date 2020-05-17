@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GH1-6I-TPR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5nE-KK-gHi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUN-5b-C7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3258" y="263"/>
+            <point key="canvasLocation" x="864" y="794"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dWH-sa-mxT">
@@ -95,8 +95,118 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
+        <!--Drawing View Controller-->
+        <scene sceneID="EeQ-Ga-Fxl">
+            <objects>
+                <viewController storyboardIdentifier="DrawingVC" id="5nE-KK-gHi" customClass="DrawingViewController" customModule="Guidy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RHy-o6-dsF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Wh-n6-ide">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-8T-cgN">
+                                <rect key="frame" x="15" y="64" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="trash" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-MC-0b4">
+                                <rect key="frame" x="348" y="64" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="arrowshape.turn.up.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressUndo:" destination="5nE-KK-gHi" eventType="touchUpInside" id="mNC-Vn-94P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUw-dz-IH3">
+                                <rect key="frame" x="20" y="809" width="25" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="largecircle.fill.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d6-Hb-Vgy">
+                                <rect key="frame" x="195" y="810" width="24.5" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="magnifyingglass" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressGallery:" destination="5nE-KK-gHi" eventType="touchUpInside" id="Muz-s1-UIU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhl-k9-FUO">
+                                <rect key="frame" x="371" y="808.5" width="23" height="25"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="square.and.arrow.down" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSave:" destination="5nE-KK-gHi" eventType="touchUpInside" id="PF7-LR-Isr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="f4G-8T-cgN" firstAttribute="top" secondItem="XlM-Xg-sqi" secondAttribute="top" constant="20" id="B9V-yc-Xw5"/>
+                            <constraint firstItem="oUw-dz-IH3" firstAttribute="centerY" secondItem="5d6-Hb-Vgy" secondAttribute="centerY" id="BNN-eE-k0g"/>
+                            <constraint firstItem="Xfx-MC-0b4" firstAttribute="top" secondItem="XlM-Xg-sqi" secondAttribute="top" constant="20" id="Dro-bR-ts7"/>
+                            <constraint firstItem="oUw-dz-IH3" firstAttribute="leading" secondItem="XlM-Xg-sqi" secondAttribute="leading" constant="20" id="E3k-e2-RWA"/>
+                            <constraint firstItem="5d6-Hb-Vgy" firstAttribute="centerX" secondItem="1Wh-n6-ide" secondAttribute="centerX" id="GxG-AC-hjV"/>
+                            <constraint firstItem="1Wh-n6-ide" firstAttribute="bottom" secondItem="RHy-o6-dsF" secondAttribute="bottom" id="H4t-hS-qpR"/>
+                            <constraint firstItem="1Wh-n6-ide" firstAttribute="leading" secondItem="XlM-Xg-sqi" secondAttribute="leading" id="LVn-Yz-XM6"/>
+                            <constraint firstItem="1Wh-n6-ide" firstAttribute="trailing" secondItem="XlM-Xg-sqi" secondAttribute="trailing" id="OkV-pD-iZZ"/>
+                            <constraint firstItem="XlM-Xg-sqi" firstAttribute="trailing" secondItem="Lhl-k9-FUO" secondAttribute="trailing" constant="20" id="PVw-5O-IjV"/>
+                            <constraint firstItem="1Wh-n6-ide" firstAttribute="top" secondItem="RHy-o6-dsF" secondAttribute="top" id="Qg5-uM-Bu8"/>
+                            <constraint firstItem="Lhl-k9-FUO" firstAttribute="centerY" secondItem="5d6-Hb-Vgy" secondAttribute="centerY" id="cda-1a-dU3"/>
+                            <constraint firstItem="XlM-Xg-sqi" firstAttribute="trailing" secondItem="Xfx-MC-0b4" secondAttribute="trailing" constant="15" id="tnl-OU-ef6"/>
+                            <constraint firstItem="XlM-Xg-sqi" firstAttribute="bottom" secondItem="5d6-Hb-Vgy" secondAttribute="bottom" constant="30" id="vVL-tt-DPY"/>
+                            <constraint firstItem="f4G-8T-cgN" firstAttribute="leading" secondItem="XlM-Xg-sqi" secondAttribute="leading" constant="15" id="xns-ha-6G8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XlM-Xg-sqi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jrc-dU-IqR"/>
+                    <connections>
+                        <outlet property="sceneView" destination="1Wh-n6-ide" id="hO3-Jq-XNL"/>
+                        <outlet property="undoButton" destination="Xfx-MC-0b4" id="ZzH-Cu-abD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FkX-ma-7sK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="119"/>
+        </scene>
+        <!--SearchAR View Contoller View Controller-->
+        <scene sceneID="NkD-ya-iVe">
+            <objects>
+                <viewController storyboardIdentifier="SearchArVC" id="XvS-k9-dL0" customClass="SearchARViewContollerViewController" customModule="Guidy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Pk-JP-xSq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YLs-Mp-xQz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbt-rw-Zho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2486" y="119"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="64" height="52"/>
+        <image name="largecircle.fill.circle" catalog="system" width="64" height="60"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
         <image name="wallp4" width="1080" height="1920"/>
     </resources>
 </document>

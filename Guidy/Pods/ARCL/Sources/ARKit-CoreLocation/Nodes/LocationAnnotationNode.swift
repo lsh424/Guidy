@@ -20,7 +20,7 @@ open class LocationAnnotationNode: LocationNode {
     /// use a negative value.
     public var annotationHeightAdjustmentFactor = 1.1
 
-    public init(location: CLLocation?, image: UIImage) {
+    public init(location: CLLocation?, image: UIImage, tag: String) {
         let plane = SCNPlane(width: image.size.width / 100, height: image.size.height / 100)
         plane.firstMaterial?.diffuse.contents = image
         plane.firstMaterial?.lightingModel = .constant
@@ -28,6 +28,7 @@ open class LocationAnnotationNode: LocationNode {
         annotationNode = AnnotationNode(view: nil, image: image)
         annotationNode.geometry = plane
         annotationNode.removeFlicker()
+        annotationNode.accessibilityValue = tag
 
         super.init(location: location)
 
@@ -46,8 +47,8 @@ open class LocationAnnotationNode: LocationNode {
     /// - Parameters:
     ///   - location:The location of the node in the world.
     ///   - view:The view to display at the specified location.
-    public convenience init(location: CLLocation?, view: UIView) {
-        self.init(location: location, image: view.image)
+    public convenience init(location: CLLocation?, view: UIView, tag: String) {
+        self.init(location: location, image: view.image, tag: tag)
     }
 
     public init(location: CLLocation?, layer: CALayer) {

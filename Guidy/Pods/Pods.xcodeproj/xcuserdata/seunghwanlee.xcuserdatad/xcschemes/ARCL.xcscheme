@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB32E97F940371D391F6B8FB4F24AC15"
-               BuildableName = "ARCL.framework"
+               BuildableName = "libARCL.a"
                BlueprintName = "ARCL"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
