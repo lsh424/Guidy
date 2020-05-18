@@ -1,20 +1,28 @@
 PODS:
-  - Alamofire (5.1.0)
+  - Alamofire (5.2.0)
   - ARCL (1.3.0)
+  - TensorFlowLiteC (2.2.0)
+  - TensorFlowLiteSwift (2.2.0):
+    - TensorFlowLiteC (= 2.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - ARCL
+  - TensorFlowLiteSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - ARCL
+    - TensorFlowLiteC
+    - TensorFlowLiteSwift
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
   ARCL: db48b6927d6f3f49f29568295ed91c94ab8d4aab
+  TensorFlowLiteC: b3ab9e867b0b71052ca102a32a786555b330b02e
+  TensorFlowLiteSwift: 2dd5e9c895e1819501f0fba3d8b69a536bda6c65
 
-PODFILE CHECKSUM: a8e52fcd6409f949a668f1fd558975b33693e72c
+PODFILE CHECKSUM: 15e08f005ac8ec68669456b82ed71f731f77dfbd
 
 COCOAPODS: 1.8.4

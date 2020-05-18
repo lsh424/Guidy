@@ -7,6 +7,7 @@ target 'Guidy' do
   
   pod 'ARCL'
   pod 'Alamofire'
+  pod 'TensorFlowLiteSwift'
 
   # Pods for Guidy
 
