@@ -20,12 +20,12 @@ enum optionType {
 class DrawingViewController: UIViewController,ARSCNViewDelegate {
     
     @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet var undoButton: UIButton!
     @IBOutlet weak var drawingOptionStackView: UIStackView!
-    
     @IBOutlet weak var drawingOptionButton: UIButton!
     
-    
+    @IBOutlet weak var trackingStateView: UIView!
+    @IBOutlet weak var trackingStateTitle: UILabel!
+    @IBOutlet weak var trackingStateMessage: UILabel!
     @IBOutlet var dotSizeAndColorButtons: [RoundButton]!
     
     var previousPoint: SCNVector3?
@@ -54,31 +54,25 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
         let longPressGestureForDrawing = UILongPressGestureRecognizer(target: self, action: #selector(longPressOptionButton))
         
         drawingOptionButton.addGestureRecognizer(longPressGestureForDrawing)
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-                UIApplication.shared.isIdleTimerDisabled = true
-                sceneView.preferredFramesPerSecond = 60
+        UIApplication.shared.isIdleTimerDisabled = true
+        sceneView.preferredFramesPerSecond = 60
 
-                sceneView.delegate = self
-                sceneView.session.delegate = self
-        //        sceneLocationView.run()
-                
-                //Add sphere count label
-                sphereCountLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 100, height: 40))
-                sphereCountLabel.textColor = UIColor.purple
-                sphereCountLabel.isHidden = false
+        sceneView.delegate = self
+        sceneView.session.delegate = self
+
+        sphereCountLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 100, height: 40))
+        sphereCountLabel.textColor = UIColor.purple
+        sphereCountLabel.isHidden = false
                     
-                let scene = SCNScene()
-                sceneView.scene = scene
+        let scene = SCNScene()
+        sceneView.scene = scene
                 
-                sceneView.session.run(configuration)
-                
-//                view.addSubview(scneView)
-//                scneView.addSubview(sphereCountLabel)
+        sceneView.session.run(configuration)
     }
     
     @objc func longPressOptionButton(gesture: UILongPressGestureRecognizer) {
@@ -109,25 +103,8 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
     }
     
     @IBAction func didPressSave(_ sender: Any) {
-        print("저장")
-//        let locationLat = NSNumber(value:location!.latitude)
-//        let locationLon = NSNumber(value:location!.longitude)
-//        let alti = NSNumber(value: altitude!)
-//        UserDefaults.standard.set(["lat": locationLat, "lon": locationLon, "alti" : alti], forKey: "1")
-        
         let image = sceneView.snapshot()
-//        networkTest(img:image)
-        
         NetworkManager().saveImage(lat: location!.latitude, lon: location!.longitude, altitude: altitude!, img: image)
-        
-//        let imgData = image.pngData()
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        let newImage = NSEntityDescription.insertNewObject(forEntityName: "Image", into: context!)
-////        newImage.setValue(imgData, forKey: "img")
-////
-////        do {
-////            try Constant.context?.save()
-////        }
     }
     
     @IBAction func didPressUndo(_ sender: Any) {
@@ -155,7 +132,6 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
     
     
     @IBAction func didPressDotAndColor(_ sender: RoundButton) {
-        
         if optionType == .size {
             switch sender {
             case dotSizeAndColorButtons[0]:
@@ -188,13 +164,6 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
         drawingOptionStackView.isHidden = true
     }
     
-    
-
-    
-    
-    
-    
-    
     override func viewDidLayoutSubviews() {
         
          // ARCL
@@ -213,41 +182,36 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-// 카메라 로컬라이징
-//    func changeTrackingStateView(forCamera camera: ARCamera) {
-//        switch camera.trackingState {
-//        case .notAvailable:
-//            // "Tracking unavailable."
-//            trackingStateView.isHidden = true
-//            break
-//        case .limited(.initializing):
-//            trackingStateView.isHidden = false
-//            trackingStateImageView.image = UIImage(named: "move-phone")
-//            trackingStateTitleLabel.text = "Detecting world"
-//            trackingStateMessageLabel.text = "Move your device around slowly"
-//            addPhoneMovingAnimation()
-//        case .limited(.relocalizing):
-//            trackingStateView.isHidden = true
-//            debugTrackingStateLabel.text = "Tracking state limited(relocalizing)"
-//            removePhoneMovingAnimation()
-//        case .limited(.excessiveMotion):
-//            trackingStateView.isHidden = false
-//            trackingStateImageView.image = UIImage(named: "exclamation")
-//            trackingStateTitleLabel.text = "Too much movement"
-//            trackingStateMessageLabel.text = "Move your device more slowly"
-//            removePhoneMovingAnimation()
-//        case .limited(.insufficientFeatures):
-//            trackingStateView.isHidden = false
-//            trackingStateImageView.image = UIImage(named: "light-bulb")
-//            trackingStateTitleLabel.text = "Not enough detail"
-//            trackingStateMessageLabel.text = "Move around or find a better lit place"
-//            removePhoneMovingAnimation()
-//        case .normal:
-//            trackingStateView.isHidden = true
-//            removePhoneMovingAnimation()
-//            break
-//        }
-//    }
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        changeTrackingStateView(forCamera: camera)
+    }
+
+    func changeTrackingStateView(forCamera camera: ARCamera) {
+        switch camera.trackingState {
+        case .notAvailable:
+            trackingStateView.isHidden = true
+            break
+        case .limited(.initializing):
+            trackingStateView.isHidden = false
+            trackingStateTitle.text = "공간 탐지 중"
+            trackingStateMessage.text = "기기를 천천히 움직여 주세요"
+        case .limited(.relocalizing):
+            trackingStateView.isHidden = true
+            trackingStateMessage.text = "공간이 제한적 입니다."
+        case .limited(.excessiveMotion):
+            trackingStateView.isHidden = false
+            trackingStateTitle.text = "움직임이 너무 과합니다."
+            trackingStateMessage.text = "기기를 조금 천천히 움직여 주세요"
+        case .limited(.insufficientFeatures):
+            trackingStateView.isHidden = false
+            trackingStateTitle.text = "공간이 제한적 입니다."
+            trackingStateMessage.text = "더 나은 장소로 이동해주세요."
+        case .normal:
+            trackingStateView.isHidden = true
+            break
+        }
+    }
+
     
     // MARK:- Drawing
     
@@ -275,14 +239,10 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
                 // Create a StrokeAnchor and add it to the Scene (One Anchor will be added to the exaction position of the first sphere for every new stroke)
                 guard let touch = touches.first else { return }
                 guard let touchPositionInFrontOfCamera = getPosition(ofPoint: touch.location(in: sceneView), atDistanceFromeCamera: 1, inView: sceneView) else { return }
-                
-                // Convert the position from SCNVector3 to float4x4
-    //            let strokeAnchor = StrokeAnchor(name: "strokeAnchor", transform: simd_float4x4(SIMD4(1, 0, 0, 0), SIMD4(0, 1, 0, 0), SIMD4(0, 0, 1, 0), SIMD4(touchPositionInFrontOfCamera.x,
-    //            touchPositionInFrontOfCamera.y, touchPositionInFrontOfCamera.z,1)))
+
                 let strokeAnchor = StrokeAnchor(name: "strokeAnchor", transform:
                     
-                    
-                    // float4 -> SIMD4 로 바꾼 상태
+                    // float4 -> SIMD4로 change
                     float4x4(SIMD4(1, 0, 0, 0),
                              SIMD4(0, 1, 0, 0),
                              SIMD4(0, 0, 1, 0),
@@ -372,20 +332,8 @@ extension DrawingViewController: ARSessionDelegate {
         }
         
         // MARK:- ARSCNViewDelegate
-//        func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-//            print("랜더러 작동")
-//            // This is only used when loading a worldMap
-//            if let strokeAnchor = anchor as? StrokeAnchor {
-//                currentStrokeAnchorNode = node
-//                strokeAnchorIDs.append(strokeAnchor.identifier)
-//                for sphereLocation in strokeAnchor.sphereLocations {
-//                    createSphereAndInsert(atPosition: SCNVector3Make(sphereLocation[0], sphereLocation[1], sphereLocation[2]), andAddToStrokeAnchor: strokeAnchor)
-//                }
-//            }
-//        }
-    
+
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        print("랜더러 작동")
         // This is only used when loading a worldMap
         if let strokeAnchor = anchor as? StrokeAnchor {
             currentStrokeAnchorNode = node
@@ -396,13 +344,6 @@ extension DrawingViewController: ARSessionDelegate {
         }
     }
     
-    
-    
-//    public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-//        arViewDelegate?.renderer?(renderer, didAdd: node, for: anchor)
-//
-//    }
-        
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
             // Remove the anchorID from the strokes array
             print("Anchor removed")
@@ -415,17 +356,6 @@ extension DrawingViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let userLocation : CLLocation = locations[0]
-        //        let latitude = userLocation.coordinate.latitude
-        //        let longitude = userLocation.coordinate.longitude
-                
-//                let latDelta : CLLocationDegrees = 0.05
-//
-//                let lonDelta : CLLocationDegrees = 0.05
-//        //
-//              let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
-                
-        //        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        
         let latitude = userLocation.coordinate.latitude
         let longitude = userLocation.coordinate.longitude
         altitude = userLocation.altitude
