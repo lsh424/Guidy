@@ -38,17 +38,17 @@
 		D1ECC6CF24767D890047A069 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C924767D890047A069 /* Utilities.swift */; };
 		D1ECC6D024767D890047A069 /* StrokeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6CA24767D890047A069 /* StrokeAnchor.swift */; };
 		D1ECC6D124767D890047A069 /* SphereNodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6CB24767D890047A069 /* SphereNodes.swift */; };
-		D1ECC6E024767E430047A069 /* GuideVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6D424767E430047A069 /* GuideVO.swift */; };
-		D1ECC6E124767E430047A069 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6D624767E430047A069 /* ModelDataHandler.swift */; };
-		D1ECC6E224767E430047A069 /* ImgCfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6D724767E430047A069 /* ImgCfViewController.swift */; };
-		D1ECC6E324767E430047A069 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6D824767E430047A069 /* CVPixelBufferExtension.swift */; };
-		D1ECC6E424767E430047A069 /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC6DA24767E430047A069 /* labels.txt */; };
-		D1ECC6E524767E430047A069 /* converted_model2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC6DB24767E430047A069 /* converted_model2.tflite */; };
-		D1ECC6E624767E430047A069 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6DC24767E430047A069 /* GuideViewController.swift */; };
-		D1ECC6E724767E430047A069 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6DE24767E430047A069 /* PreviewView.swift */; };
-		D1ECC6E824767E430047A069 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6DF24767E430047A069 /* CameraFeedManager.swift */; };
-		D1ECC6EE24767E7A0047A069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC6EA24767E7A0047A069 /* LaunchScreen.storyboard */; };
-		D1ECC6EF24767E7A0047A069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC6EC24767E7A0047A069 /* Main.storyboard */; };
+		D1ECC6F2247687150047A069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC6F1247687150047A069 /* Main.storyboard */; };
+		D1ECC70C247687670047A069 /* GuideVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC700247687670047A069 /* GuideVO.swift */; };
+		D1ECC70D247687670047A069 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC702247687670047A069 /* ModelDataHandler.swift */; };
+		D1ECC70E247687670047A069 /* ImgCfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC703247687670047A069 /* ImgCfViewController.swift */; };
+		D1ECC70F247687670047A069 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC704247687670047A069 /* CVPixelBufferExtension.swift */; };
+		D1ECC710247687670047A069 /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC706247687670047A069 /* labels.txt */; };
+		D1ECC711247687670047A069 /* converted_model2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC707247687670047A069 /* converted_model2.tflite */; };
+		D1ECC712247687670047A069 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC708247687670047A069 /* GuideViewController.swift */; };
+		D1ECC713247687670047A069 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC70A247687670047A069 /* PreviewView.swift */; };
+		D1ECC714247687670047A069 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC70B247687670047A069 /* CameraFeedManager.swift */; };
+		D1ECC716247687BC0047A069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC715247687BC0047A069 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,17 +86,17 @@
 		D1ECC6C924767D890047A069 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D1ECC6CA24767D890047A069 /* StrokeAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeAnchor.swift; sourceTree = "<group>"; };
 		D1ECC6CB24767D890047A069 /* SphereNodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereNodes.swift; sourceTree = "<group>"; };
-		D1ECC6D424767E430047A069 /* GuideVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideVO.swift; sourceTree = "<group>"; };
-		D1ECC6D624767E430047A069 /* ModelDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
-		D1ECC6D724767E430047A069 /* ImgCfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgCfViewController.swift; sourceTree = "<group>"; };
-		D1ECC6D824767E430047A069 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
-		D1ECC6DA24767E430047A069 /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
-		D1ECC6DB24767E430047A069 /* converted_model2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = converted_model2.tflite; sourceTree = "<group>"; };
-		D1ECC6DC24767E430047A069 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
-		D1ECC6DE24767E430047A069 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
-		D1ECC6DF24767E430047A069 /* CameraFeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
-		D1ECC6EB24767E7A0047A069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D1ECC6ED24767E7A0047A069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D1ECC6F1247687150047A069 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D1ECC700247687670047A069 /* GuideVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideVO.swift; sourceTree = "<group>"; };
+		D1ECC702247687670047A069 /* ModelDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
+		D1ECC703247687670047A069 /* ImgCfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgCfViewController.swift; sourceTree = "<group>"; };
+		D1ECC704247687670047A069 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
+		D1ECC706247687670047A069 /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
+		D1ECC707247687670047A069 /* converted_model2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = converted_model2.tflite; sourceTree = "<group>"; };
+		D1ECC708247687670047A069 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		D1ECC70A247687670047A069 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		D1ECC70B247687670047A069 /* CameraFeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		D1ECC715247687BC0047A069 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFCE8D10D3EDD14FD948C255 /* libPods-Guidy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Guidy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,9 +163,9 @@
 				D1537C72246D2862004A6BEF /* Network */,
 				D1537C7A246D28B7004A6BEF /* Extensions */,
 				D1ECC6C324767D530047A069 /* AR Drawing */,
-				D1ECC6D324767E420047A069 /* ImgClassification */,
+				D1ECC6FF247687670047A069 /* ImgClassification */,
 				D114A9A02472B69400E17BA4 /* GuideData */,
-				D1ECC6E924767E7A0047A069 /* Storyboards */,
+				D1ECC6F0247686E80047A069 /* Storyboards */,
 				D1537C65246ABE4F004A6BEF /* Assets.xcassets */,
 				D1537C6A246ABE4F004A6BEF /* Info.plist */,
 				D1537C62246ABE4A004A6BEF /* Guidy.xcdatamodeld */,
@@ -218,55 +218,53 @@
 			path = "AR Drawing";
 			sourceTree = "<group>";
 		};
-		D1ECC6D324767E420047A069 /* ImgClassification */ = {
+		D1ECC6F0247686E80047A069 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				D1ECC6D724767E430047A069 /* ImgCfViewController.swift */,
-				D1ECC6D824767E430047A069 /* CVPixelBufferExtension.swift */,
-				D1ECC6DC24767E430047A069 /* GuideViewController.swift */,
-				D1ECC6D424767E430047A069 /* GuideVO.swift */,
-				D1ECC6D524767E430047A069 /* ModelDataHandler */,
-				D1ECC6DD24767E430047A069 /* Camera Feed */,
-				D1ECC6D924767E430047A069 /* CNN */,
+				D1ECC6F1247687150047A069 /* Main.storyboard */,
+				D1ECC715247687BC0047A069 /* LaunchScreen.storyboard */,
 			);
-			name = ImgClassification;
-			path = "../../../Guidy 2/Guidy/Guidy/ImgClassification";
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		D1ECC6D524767E430047A069 /* ModelDataHandler */ = {
+		D1ECC6FF247687670047A069 /* ImgClassification */ = {
 			isa = PBXGroup;
 			children = (
-				D1ECC6D624767E430047A069 /* ModelDataHandler.swift */,
+				D1ECC700247687670047A069 /* GuideVO.swift */,
+				D1ECC701247687670047A069 /* ModelDataHandler */,
+				D1ECC703247687670047A069 /* ImgCfViewController.swift */,
+				D1ECC704247687670047A069 /* CVPixelBufferExtension.swift */,
+				D1ECC705247687670047A069 /* CNN */,
+				D1ECC708247687670047A069 /* GuideViewController.swift */,
+				D1ECC709247687670047A069 /* Camera Feed */,
+			);
+			path = ImgClassification;
+			sourceTree = "<group>";
+		};
+		D1ECC701247687670047A069 /* ModelDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D1ECC702247687670047A069 /* ModelDataHandler.swift */,
 			);
 			path = ModelDataHandler;
 			sourceTree = "<group>";
 		};
-		D1ECC6D924767E430047A069 /* CNN */ = {
+		D1ECC705247687670047A069 /* CNN */ = {
 			isa = PBXGroup;
 			children = (
-				D1ECC6DA24767E430047A069 /* labels.txt */,
-				D1ECC6DB24767E430047A069 /* converted_model2.tflite */,
+				D1ECC706247687670047A069 /* labels.txt */,
+				D1ECC707247687670047A069 /* converted_model2.tflite */,
 			);
 			path = CNN;
 			sourceTree = "<group>";
 		};
-		D1ECC6DD24767E430047A069 /* Camera Feed */ = {
+		D1ECC709247687670047A069 /* Camera Feed */ = {
 			isa = PBXGroup;
 			children = (
-				D1ECC6DE24767E430047A069 /* PreviewView.swift */,
-				D1ECC6DF24767E430047A069 /* CameraFeedManager.swift */,
+				D1ECC70A247687670047A069 /* PreviewView.swift */,
+				D1ECC70B247687670047A069 /* CameraFeedManager.swift */,
 			);
 			path = "Camera Feed";
-			sourceTree = "<group>";
-		};
-		D1ECC6E924767E7A0047A069 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				D1ECC6EA24767E7A0047A069 /* LaunchScreen.storyboard */,
-				D1ECC6EC24767E7A0047A069 /* Main.storyboard */,
-			);
-			name = Storyboards;
-			path = "../../../Guidy 2/Guidy/Guidy/Storyboards";
 			sourceTree = "<group>";
 		};
 		ED7F8F0BEFAC5BB59F0009E7 /* Pods */ = {
@@ -339,16 +337,16 @@
 			files = (
 				D114A9B02472B6C800E17BA4 /* 강녕전오디오가이드.mp3 in Resources */,
 				D114A9A82472B6AF00E17BA4 /* 강녕전가이드이미지.jpeg in Resources */,
-				D1ECC6EE24767E7A0047A069 /* LaunchScreen.storyboard in Resources */,
 				D114A9B12472B6C800E17BA4 /* 경회루오디오가이드.mp3 in Resources */,
 				D114A9AA2472B6AF00E17BA4 /* 근정전오디오가이드.mp3 in Resources */,
-				D1ECC6E424767E430047A069 /* labels.txt in Resources */,
 				D114A9AB2472B6AF00E17BA4 /* 광화문가이드이미지.jpg in Resources */,
-				D1ECC6E524767E430047A069 /* converted_model2.tflite in Resources */,
+				D1ECC711247687670047A069 /* converted_model2.tflite in Resources */,
+				D1ECC6F2247687150047A069 /* Main.storyboard in Resources */,
 				D1537C66246ABE4F004A6BEF /* Assets.xcassets in Resources */,
+				D1ECC710247687670047A069 /* labels.txt in Resources */,
 				D114A9A22472B6A100E17BA4 /* guideData.json in Resources */,
-				D1ECC6EF24767E7A0047A069 /* Main.storyboard in Resources */,
 				D114A9AC2472B6AF00E17BA4 /* 경회루가이드이미지.jpg in Resources */,
+				D1ECC716247687BC0047A069 /* LaunchScreen.storyboard in Resources */,
 				D114A9A92472B6AF00E17BA4 /* 근정전가이드이미지.jpg in Resources */,
 				D114A9B22472B6C800E17BA4 /* 광화문오디오가이드.mp3 in Resources */,
 			);
@@ -386,7 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1ECC6E024767E430047A069 /* GuideVO.swift in Sources */,
+				D1ECC70C247687670047A069 /* GuideVO.swift in Sources */,
 				D1ECC6D024767D890047A069 /* StrokeAnchor.swift in Sources */,
 				D1ECC6CE24767D890047A069 /* RoundButton.swift in Sources */,
 				D1537C64246ABE4A004A6BEF /* Guidy.xcdatamodeld in Sources */,
@@ -398,15 +396,15 @@
 				D1537C74246D2878004A6BEF /* NetworkManager.swift in Sources */,
 				D1ECC6C524767D600047A069 /* DrawingViewController.swift in Sources */,
 				D1537C5A246ABE4A004A6BEF /* AppDelegate.swift in Sources */,
-				D1ECC6E224767E430047A069 /* ImgCfViewController.swift in Sources */,
-				D1ECC6E724767E430047A069 /* PreviewView.swift in Sources */,
-				D1ECC6E624767E430047A069 /* GuideViewController.swift in Sources */,
-				D1ECC6E124767E430047A069 /* ModelDataHandler.swift in Sources */,
-				D1ECC6E824767E430047A069 /* CameraFeedManager.swift in Sources */,
+				D1ECC70E247687670047A069 /* ImgCfViewController.swift in Sources */,
+				D1ECC713247687670047A069 /* PreviewView.swift in Sources */,
+				D1ECC712247687670047A069 /* GuideViewController.swift in Sources */,
+				D1ECC70D247687670047A069 /* ModelDataHandler.swift in Sources */,
+				D1ECC714247687670047A069 /* CameraFeedManager.swift in Sources */,
 				D1537C77246D2899004A6BEF /* Img_loca.swift in Sources */,
 				D1ECC6CC24767D890047A069 /* SearchARViewContollerViewController.swift in Sources */,
 				D1537C86246D28C6004A6BEF /* SCNVector3+Extensions.swift in Sources */,
-				D1ECC6E324767E430047A069 /* CVPixelBufferExtension.swift in Sources */,
+				D1ECC70F247687670047A069 /* CVPixelBufferExtension.swift in Sources */,
 				D1537C84246D28C6004A6BEF /* CGImagePropertyOrientation.swift in Sources */,
 				D1ECC6CF24767D890047A069 /* Utilities.swift in Sources */,
 				D1537C5C246ABE4A004A6BEF /* SceneDelegate.swift in Sources */,
@@ -417,25 +415,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D1ECC6EA24767E7A0047A069 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D1ECC6EB24767E7A0047A069 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		D1ECC6EC24767E7A0047A069 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D1ECC6ED24767E7A0047A069 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D1537C6B246ABE4F004A6BEF /* Debug */ = {

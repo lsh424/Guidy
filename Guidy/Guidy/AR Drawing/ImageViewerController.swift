@@ -44,6 +44,4 @@ class ImageViewerController: UIViewController {
         }
         
     }
-    
-    
 }
