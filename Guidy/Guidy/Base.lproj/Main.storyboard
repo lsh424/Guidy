@@ -400,13 +400,136 @@
             </objects>
             <point key="canvasLocation" x="3273.913043478261" y="118.52678571428571"/>
         </scene>
+
+        <!--Guide View Controller-->
+        <scene sceneID="KGr-Nj-Zyu">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="3l7-Xn-0EA" customClass="GuideViewController" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G9Q-ge-5oH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건물 이름 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRu-ki-2Uy">
+                                <rect key="frame" x="30" y="74" width="354" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="BPt-gs-WHv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="근정전가이드이미지.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jI2-Lh-Bdh">
+                                <rect key="frame" x="0.0" y="120" width="414" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="PU7-cU-0Ji"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g2-Zw-dag">
+                                <rect key="frame" x="30" y="430" width="35" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="vyJ-sV-NoI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rb-OJ-KCb">
+                                <rect key="frame" x="10" y="464" width="394" height="2"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="8h1-kt-Hha"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL4-Et-jrI">
+                                <rect key="frame" x="10" y="476" width="394" height="356"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">경복궁 근정전은 조선시대 법궁인 경복궁의 중심 건물로, 신하들이 임금에게 새해 인사를 드리거나 국가의식을 거행하고 외국 사신을 맞이하던 곳이다.
+
+태조 4년(1395)에 지었으며, 정종과 세종을 비롯한 조선 전기의 여러 왕들이 이곳에서 즉위식을 하기도 하였다. ‘근정’이란 이름은 천하의 일은 부지런하면 잘 다스려진다는 의미를 담고 있는 것으로, 정도전이 지었다. 지금 있는 건물은 임진왜란 때 불탄 것을 고종 4년(1867) 다시 지은 것이다.
+
+앞면 5칸·옆면 5칸 크기의 2층 건물로 지붕은 옆면에서 볼 때 여덟 팔(八)자 모양인 팔작지붕이다. 지붕 처마를 받치기 위해 장식하여 짜여진 구조가 기둥 위뿐만 아니라 기둥 사이에도 있는 다포식 건물이며 그 형태가 화려한 모습을 띠고 있다. 건물의 기단인 월대의 귀퉁이나 계단 주위 난간기둥에 훌륭한 솜씨로 12지신상을 비롯한 동물상들을 조각해 놓았다.
+
+건물 내부는 아래·위가 트인 통층으로 뒷편 가운데에 임금의 자리인 어좌가 있다. 어좌 뒤에는 ‘일월오악도’병풍을 놓았고, 위는 화려한 장식으로 꾸몄다.
+
+근정전에서 근정문에 이르는 길 좌우에는 문무백관들의 지위를 표시하는 품계석이 차례로 놓여 있으며, 햇빛을 가릴 때 사용하였던 차일 고리가 앞마당에 남아 있다. 근정문 주변으로는 행각(行閣)이 연결되어 근정전을 둘러싸고 있다.
+
+근정전은 조선 중기 이후 세련미를 잃어가던 수법을 가다듬어 완성시킨 왕궁의 위엄을 갖춘 웅장한 궁궐건축이다.
+</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fel-cy-W1Y">
+                                <rect key="frame" x="365" y="431" width="19" height="22"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="play" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressAudioPlayBtn:" destination="3l7-Xn-0EA" eventType="touchUpInside" id="SXR-Yv-GAZ"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphones" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EXZ-pR-n5i">
+                                <rect key="frame" x="328" y="430" width="27" height="23.5"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Fel-cy-W1Y" firstAttribute="centerY" secondItem="EXZ-pR-n5i" secondAttribute="centerY" id="2Bf-h6-eJy"/>
+                            <constraint firstItem="0Rb-OJ-KCb" firstAttribute="top" secondItem="5g2-Zw-dag" secondAttribute="bottom" constant="10" id="71s-iH-df3"/>
+                            <constraint firstItem="jCe-HD-ZnP" firstAttribute="trailing" secondItem="jL4-Et-jrI" secondAttribute="trailing" constant="10" id="AWv-4M-8mI"/>
+                            <constraint firstItem="jCe-HD-ZnP" firstAttribute="trailing" secondItem="Fel-cy-W1Y" secondAttribute="trailing" constant="30" id="KHi-Kb-hxV"/>
+                            <constraint firstItem="jL4-Et-jrI" firstAttribute="leading" secondItem="jCe-HD-ZnP" secondAttribute="leading" constant="10" id="Mla-jr-KKb"/>
+                            <constraint firstItem="EXZ-pR-n5i" firstAttribute="centerY" secondItem="5g2-Zw-dag" secondAttribute="centerY" id="T13-bc-9aY"/>
+                            <constraint firstItem="YRu-ki-2Uy" firstAttribute="top" secondItem="jCe-HD-ZnP" secondAttribute="top" constant="30" id="WPS-T3-foT"/>
+                            <constraint firstItem="0Rb-OJ-KCb" firstAttribute="leading" secondItem="jCe-HD-ZnP" secondAttribute="leading" constant="10" id="cnu-uy-WRO"/>
+                            <constraint firstItem="5g2-Zw-dag" firstAttribute="top" secondItem="jI2-Lh-Bdh" secondAttribute="bottom" constant="10" id="f4R-1t-Cxc"/>
+                            <constraint firstItem="jCe-HD-ZnP" firstAttribute="trailing" secondItem="jI2-Lh-Bdh" secondAttribute="trailing" id="gyx-pk-WPY"/>
+                            <constraint firstItem="jCe-HD-ZnP" firstAttribute="trailing" secondItem="0Rb-OJ-KCb" secondAttribute="trailing" constant="10" id="jHy-86-Rig"/>
+                            <constraint firstItem="jCe-HD-ZnP" firstAttribute="bottom" secondItem="jL4-Et-jrI" secondAttribute="bottom" constant="30" id="lkh-Nz-JWx"/>
+                            <constraint firstItem="5g2-Zw-dag" firstAttribute="leading" secondItem="jCe-HD-ZnP" secondAttribute="leading" constant="30" id="ody-YD-lcB"/>
+                            <constraint firstItem="YRu-ki-2Uy" firstAttribute="leading" secondItem="jCe-HD-ZnP" secondAttribute="leading" constant="30" id="raz-FF-2hT"/>
+                            <constraint firstItem="jI2-Lh-Bdh" firstAttribute="leading" secondItem="jCe-HD-ZnP" secondAttribute="leading" id="rhc-Fx-8i7"/>
+                            <constraint firstItem="jCe-HD-ZnP" firstAttribute="trailing" secondItem="YRu-ki-2Uy" secondAttribute="trailing" constant="30" id="tXc-z1-Dx4"/>
+                            <constraint firstItem="jL4-Et-jrI" firstAttribute="top" secondItem="0Rb-OJ-KCb" secondAttribute="bottom" constant="10" id="uJH-oc-vQ3"/>
+                            <constraint firstItem="Fel-cy-W1Y" firstAttribute="leading" secondItem="EXZ-pR-n5i" secondAttribute="trailing" constant="10" id="v7t-ub-P7e"/>
+                            <constraint firstItem="jI2-Lh-Bdh" firstAttribute="top" secondItem="YRu-ki-2Uy" secondAttribute="bottom" constant="10" id="y9Q-uP-uv6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jCe-HD-ZnP"/>
+                    </view>
+                    <connections>
+                        <outlet property="audioGuideBtn" destination="Fel-cy-W1Y" id="gDS-BN-pvp"/>
+                        <outlet property="img" destination="jI2-Lh-Bdh" id="nHe-Oh-lws"/>
+                        <outlet property="name" destination="YRu-ki-2Uy" id="e2c-vp-U86"/>
+                        <outlet property="textGuide" destination="jL4-Et-jrI" id="p9E-wS-CPV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vdg-tS-QTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="794"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.left" catalog="system" width="64" height="52"/>
+        <image name="headphones" catalog="system" width="64" height="52"/>
+<<<<<<< HEAD:Guidy/Guidy/Storyboards/Base.lproj/Main.storyboard
+        <image name="heart" catalog="system" width="64" height="54"/>
+
+=======
+>>>>>>> parent of ddaeb7a... [Add] Image Classification, ImageViewer:Guidy/Guidy/Base.lproj/Main.storyboard
         <image name="largecircle.fill.circle" catalog="system" width="64" height="60"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
         <image name="trash" catalog="system" width="60" height="64"/>
         <image name="wallp4" width="1080" height="1920"/>
+<<<<<<< HEAD:Guidy/Guidy/Storyboards/Base.lproj/Main.storyboard
+
+        <image name="경회루가이드이미지.jpg" width="432" height="340.79998779296875"/>
+
+=======
+        <image name="근정전가이드이미지.jpg" width="445.92001342773438" height="296.39999389648438"/>
+>>>>>>> parent of ddaeb7a... [Add] Image Classification, ImageViewer:Guidy/Guidy/Base.lproj/Main.storyboard
     </resources>
 </document>

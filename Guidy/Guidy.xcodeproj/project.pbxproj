@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0924B6F60C3DCC8FC483044C /* libPods-Guidy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCE8D10D3EDD14FD948C255 /* libPods-Guidy.a */; };
+		D114A9A22472B6A100E17BA4 /* guideData.json in Resources */ = {isa = PBXBuildFile; fileRef = D114A9A12472B6A100E17BA4 /* guideData.json */; };
+		D114A9A82472B6AF00E17BA4 /* 강녕전가이드이미지.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D114A9A32472B6AF00E17BA4 /* 강녕전가이드이미지.jpeg */; };
+		D114A9A92472B6AF00E17BA4 /* 근정전가이드이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D114A9A42472B6AF00E17BA4 /* 근정전가이드이미지.jpg */; };
+		D114A9AA2472B6AF00E17BA4 /* 근정전오디오가이드.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D114A9A52472B6AF00E17BA4 /* 근정전오디오가이드.mp3 */; };
+		D114A9AB2472B6AF00E17BA4 /* 광화문가이드이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D114A9A62472B6AF00E17BA4 /* 광화문가이드이미지.jpg */; };
+		D114A9AC2472B6AF00E17BA4 /* 경회루가이드이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D114A9A72472B6AF00E17BA4 /* 경회루가이드이미지.jpg */; };
+		D114A9B02472B6C800E17BA4 /* 강녕전오디오가이드.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D114A9AD2472B6C700E17BA4 /* 강녕전오디오가이드.mp3 */; };
+		D114A9B12472B6C800E17BA4 /* 경회루오디오가이드.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D114A9AE2472B6C800E17BA4 /* 경회루오디오가이드.mp3 */; };
+		D114A9B22472B6C800E17BA4 /* 광화문오디오가이드.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D114A9AF2472B6C800E17BA4 /* 광화문오디오가이드.mp3 */; };
+		D114A9B62472B79000E17BA4 /* converted_model2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D114A9B42472B79000E17BA4 /* converted_model2.tflite */; };
+		D114A9B72472B79000E17BA4 /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = D114A9B52472B79000E17BA4 /* labels.txt */; };
 		D1537C5A246ABE4A004A6BEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C59246ABE4A004A6BEF /* AppDelegate.swift */; };
 		D1537C5C246ABE4A004A6BEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C5B246ABE4A004A6BEF /* SceneDelegate.swift */; };
 		D1537C5E246ABE4A004A6BEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C5D246ABE4A004A6BEF /* ViewController.swift */; };
@@ -35,6 +46,17 @@
 /* Begin PBXFileReference section */
 		333A7BA8231BB7F7B2155195 /* Pods-Guidy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guidy.debug.xcconfig"; path = "Target Support Files/Pods-Guidy/Pods-Guidy.debug.xcconfig"; sourceTree = "<group>"; };
 		6CE13D69F5BA78360081F886 /* Pods-Guidy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guidy.release.xcconfig"; path = "Target Support Files/Pods-Guidy/Pods-Guidy.release.xcconfig"; sourceTree = "<group>"; };
+		D114A9A12472B6A100E17BA4 /* guideData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = guideData.json; sourceTree = "<group>"; };
+		D114A9A32472B6AF00E17BA4 /* 강녕전가이드이미지.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "강녕전가이드이미지.jpeg"; sourceTree = "<group>"; };
+		D114A9A42472B6AF00E17BA4 /* 근정전가이드이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "근정전가이드이미지.jpg"; sourceTree = "<group>"; };
+		D114A9A52472B6AF00E17BA4 /* 근정전오디오가이드.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "근정전오디오가이드.mp3"; sourceTree = "<group>"; };
+		D114A9A62472B6AF00E17BA4 /* 광화문가이드이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "광화문가이드이미지.jpg"; sourceTree = "<group>"; };
+		D114A9A72472B6AF00E17BA4 /* 경회루가이드이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "경회루가이드이미지.jpg"; sourceTree = "<group>"; };
+		D114A9AD2472B6C700E17BA4 /* 강녕전오디오가이드.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "강녕전오디오가이드.mp3"; sourceTree = "<group>"; };
+		D114A9AE2472B6C800E17BA4 /* 경회루오디오가이드.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "경회루오디오가이드.mp3"; sourceTree = "<group>"; };
+		D114A9AF2472B6C800E17BA4 /* 광화문오디오가이드.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "광화문오디오가이드.mp3"; sourceTree = "<group>"; };
+		D114A9B42472B79000E17BA4 /* converted_model2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = converted_model2.tflite; sourceTree = "<group>"; };
+		D114A9B52472B79000E17BA4 /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
 		D1537C56246ABE4A004A6BEF /* Guidy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guidy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1537C59246ABE4A004A6BEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1537C5B246ABE4A004A6BEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +104,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D114A9A02472B69400E17BA4 /* GuideData */ = {
+			isa = PBXGroup;
+			children = (
+				D114A9A12472B6A100E17BA4 /* guideData.json */,
+				D114A9A32472B6AF00E17BA4 /* 강녕전가이드이미지.jpeg */,
+				D114A9A72472B6AF00E17BA4 /* 경회루가이드이미지.jpg */,
+				D114A9A62472B6AF00E17BA4 /* 광화문가이드이미지.jpg */,
+				D114A9A42472B6AF00E17BA4 /* 근정전가이드이미지.jpg */,
+				D114A9A52472B6AF00E17BA4 /* 근정전오디오가이드.mp3 */,
+				D114A9AD2472B6C700E17BA4 /* 강녕전오디오가이드.mp3 */,
+				D114A9AE2472B6C800E17BA4 /* 경회루오디오가이드.mp3 */,
+				D114A9AF2472B6C800E17BA4 /* 광화문오디오가이드.mp3 */,
+			);
+			path = GuideData;
+			sourceTree = "<group>";
+		};
+		D114A9B32472B76A00E17BA4 /* CNN */ = {
+			isa = PBXGroup;
+			children = (
+				D114A9B42472B79000E17BA4 /* converted_model2.tflite */,
+				D114A9B52472B79000E17BA4 /* labels.txt */,
+			);
+			path = CNN;
+			sourceTree = "<group>";
+		};
 		D1537C4D246ABE4A004A6BEF = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +150,8 @@
 		D1537C58246ABE4A004A6BEF /* Guidy */ = {
 			isa = PBXGroup;
 			children = (
+				D114A9B32472B76A00E17BA4 /* CNN */,
+				D114A9A02472B69400E17BA4 /* GuideData */,
 				D1537C59246ABE4A004A6BEF /* AppDelegate.swift */,
 				D1537C5B246ABE4A004A6BEF /* SceneDelegate.swift */,
 				D1537C72246D2862004A6BEF /* Network */,
@@ -126,8 +175,8 @@
 		D1537C72246D2862004A6BEF /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				D1537C75246D288A004A6BEF /* Model */,
 				D1537C73246D2878004A6BEF /* NetworkManager.swift */,
+				D1537C75246D288A004A6BEF /* Model */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -222,8 +271,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D114A9B02472B6C800E17BA4 /* 강녕전오디오가이드.mp3 in Resources */,
+				D114A9A82472B6AF00E17BA4 /* 강녕전가이드이미지.jpeg in Resources */,
 				D1537C69246ABE4F004A6BEF /* LaunchScreen.storyboard in Resources */,
+				D114A9B12472B6C800E17BA4 /* 경회루오디오가이드.mp3 in Resources */,
+				D114A9AA2472B6AF00E17BA4 /* 근정전오디오가이드.mp3 in Resources */,
+				D114A9B72472B79000E17BA4 /* labels.txt in Resources */,
+				D114A9B62472B79000E17BA4 /* converted_model2.tflite in Resources */,
+				D114A9AB2472B6AF00E17BA4 /* 광화문가이드이미지.jpg in Resources */,
 				D1537C66246ABE4F004A6BEF /* Assets.xcassets in Resources */,
+				D114A9A22472B6A100E17BA4 /* guideData.json in Resources */,
+				D114A9AC2472B6AF00E17BA4 /* 경회루가이드이미지.jpg in Resources */,
+				D114A9A92472B6AF00E17BA4 /* 근정전가이드이미지.jpg in Resources */,
+				D114A9B22472B6C800E17BA4 /* 광화문오디오가이드.mp3 in Resources */,
 				D1537C61246ABE4A004A6BEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
