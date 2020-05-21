@@ -23,10 +23,15 @@ class NetworkManager {
             ]
         
         let image = img
-        let imageData = image.jpegData(compressionQuality: 1)
-                
+        let thumbnailImage = UIImage.scale(image: image, by: 0.5)
+        let imageData = image.jpegData(compressionQuality: 0.9)
+        let thumbnailData = thumbnailImage?.jpegData(compressionQuality: 0.5)
+        
         AF.upload(multipartFormData: { multiPart in
-        multiPart.append(imageData!, withName: "file",fileName: "test.png", mimeType: "image/png")
+        multiPart.append(imageData!, withName: "file",fileName: "image.png", mimeType: "image/png")
+            
+        multiPart.append(thumbnailData!, withName: "file",fileName: "thumbnailImage.png", mimeType: "image/png")
+        
         for (key, value) in parameters {
                 multiPart.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
                 }
@@ -48,7 +53,7 @@ class NetworkManager {
     func getImgData(lat: CLLocationDegrees, lon: CLLocationDegrees, altitude: CLLocationDistance, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "/ar/dis"
         
-        let param = Img_loca(image: nil, lon: lon, lat: lat, alt: altitude)
+        let param = Img_loca(image: nil, thum: nil, lon: lon, lat: lat, alt: altitude)
         
         let request = AF.request(url,
         method: .post,

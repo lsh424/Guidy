@@ -8,6 +8,7 @@
 
 struct Img_loca: Codable {
     let image: String?
+    let thum: String?
     let lon: Double?
     let lat: Double?
     let alt: Double?

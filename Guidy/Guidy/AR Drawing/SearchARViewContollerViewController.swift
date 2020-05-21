@@ -107,7 +107,7 @@ class SearchARViewContollerViewController: UIViewController {
             print(result)
             
             for data in result!.dis {
-                self.downloadImage(from: (data?.image)!, lat: (data?.lat)!, lon: (data?.lon)!, alt: (data?.alt)!)
+                self.downloadImage(from: (data?.thum)!, lat: (data?.lat)!, lon: (data?.lon)!, alt: (data?.alt)!, tag: (data?.image)!)
             }
         }
     }
@@ -116,7 +116,7 @@ class SearchARViewContollerViewController: UIViewController {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
-    func downloadImage(from urlString: String, lat: Double, lon: Double, alt: Double) {
+    func downloadImage(from urlString: String, lat: Double, lon: Double, alt: Double, tag: String) {
         guard let url = URL(string: urlString) else {
             return
         }
@@ -134,20 +134,21 @@ class SearchARViewContollerViewController: UIViewController {
                 
                 imgView.image = img
 
-                imgView.frame = CGRect(x: 0, y: 0, width: 200, height: 300)
+                imgView.frame = CGRect(x: 0, y: 0, width: 100, height: 150) // 200, 300
                 imgView.layer.masksToBounds = true
                 imgView.layer.borderWidth = 5
                 imgView.layer.borderColor = UIColor.purple.cgColor
                 imgView.layer.cornerRadius = imgView.bounds.width / 3
                 
                 
-                let annotationNode = LocationAnnotationNode(location: location, view: imgView, tag: urlString)
+                let annotationNode = LocationAnnotationNode(location: location, view: imgView, tag: tag)
+                
                 annotationNode.scaleRelativeToDistance = true
                 
 //                annotationNode.continuallyUpdatePositionAndScale = true
                 annotationNode.continuallyAdjustNodePositionWhenWithinRange = false // 기본 - true
-                annotationNode.accessibilityLabel = urlString
-                annotationNode.name = urlString
+//                annotationNode.accessibilityLabel = urlString
+//                annotationNode.name = urlString
                 
                 guard let scnLocationView = self?.sceneLocationView else {
                     return
@@ -187,9 +188,15 @@ extension SearchARViewContollerViewController: LNTouchDelegate {
             getData(from: URL(string: node.accessibilityValue!)!) { (data, response, error) in
                 guard let data = data, error == nil else { return }
                 DispatchQueue.main.async() { [weak self] in
-                    let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: self!.view.frame.width, height: self!.view.frame.height))
-                    imgView.image = UIImage(data: data)
-                    self!.sceneLocationView.addSubview(imgView)
+//                    let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: self!.view.frame.width, height: self!.view.frame.height))
+//                    imgView.image = UIImage(data: data)
+//                    self!.sceneLocationView.addSubview(imgView)
+                    
+                    let vc = self?.storyboard?.instantiateViewController(withIdentifier: "ImageViwerVC") as! ImageViewerController
+                        
+                    vc.image = UIImage(data: data)
+                    vc.modalPresentationStyle = .fullScreen
+                    self?.present(vc, animated: true, completion: nil)
             }
         }
      }
