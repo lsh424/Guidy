@@ -230,12 +230,12 @@
 		D1ECC6FF247687670047A069 /* ImgClassification */ = {
 			isa = PBXGroup;
 			children = (
+				D1ECC708247687670047A069 /* GuideViewController.swift */,
 				D1ECC700247687670047A069 /* GuideVO.swift */,
-				D1ECC701247687670047A069 /* ModelDataHandler */,
 				D1ECC703247687670047A069 /* ImgCfViewController.swift */,
 				D1ECC704247687670047A069 /* CVPixelBufferExtension.swift */,
+				D1ECC701247687670047A069 /* ModelDataHandler */,
 				D1ECC705247687670047A069 /* CNN */,
-				D1ECC708247687670047A069 /* GuideViewController.swift */,
 				D1ECC709247687670047A069 /* Camera Feed */,
 			);
 			path = ImgClassification;

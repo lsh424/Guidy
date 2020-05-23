@@ -45,7 +45,7 @@ class ImgCfViewController: UIViewController {
     guard modelDataHandler != nil else {
       fatalError("Model set up failed")
     }
-
+    
 #if targetEnvironment(simulator)
     previewView.shouldUseClipboardImage = true
     NotificationCenter.default.addObserver(self,
@@ -140,14 +140,16 @@ extension ImgCfViewController: CameraFeedManagerDelegate {
     
     print("첫번째 열 \(result!.inferences[0].confidence)")
     
-    if result!.inferences[0].confidence > 0.75 {
+    if result!.inferences[0].confidence > 0.8 {
         DispatchQueue.main.async {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "GuideVC") as! GuideViewController
             
-//            vc.name = self.result!.inferences[0].label
-            vc.name = "경회루"
+            vc.name = self.result!.inferences[0].label
+
         //   vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+//            self.present(vc, animated: true, completion: nil)
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
   }

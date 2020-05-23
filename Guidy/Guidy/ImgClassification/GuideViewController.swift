@@ -13,19 +13,19 @@ var soundEffect: AVAudioPlayer?
 
 class GuideViewController: UIViewController {
     
-    
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var textGuide: UITextView!
     @IBOutlet weak var audioGuideBtn: UIButton!
     
     var isplay = 0
-    var name: String? 
+    var name: String?
+    var audioName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = name
+        self.navigationItem.title = name
+        
 //        let imgName = name.text! + "가이드이미지"
 //        img.image = UIImage(named: imgName)
 //        
@@ -35,9 +35,30 @@ class GuideViewController: UIViewController {
         
         if let contents = try? String(contentsOfFile: path!) {
             if let data = contents.data(using: .utf8) {
-                print("리절트 데이터 \(data)")
-                let result = try? JSONDecoder().decode(guideVO.self, from: data)
-                print("제이슨 결과 \(result)")
+
+                 do {
+                   let result = try JSONDecoder().decode(guideVO.self, from: data)
+                    if name == "광화문" {
+                        audioName = result.data.gwang.audioGuide
+                        textGuide.text = result.data.gwang.textGuide
+                        img.image = UIImage(named: "광화문가이드이미지.jpg")
+                    } else if name == "근정전" {
+                        audioName = result.data.geun.audioGuide
+                        textGuide.text = result.data.geun.textGuide
+                        img.image = UIImage(named: "근정전가이드이미지.jpg")
+                    } else if name == "강녕전" {
+                        audioName = result.data.gang.audioGuide
+                        textGuide.text = result.data.gang.textGuide
+                        img.image = UIImage(named: "강녕전가이드이미지.jpeg")
+                    } else {
+                        audioName = result.data.kyung.audioGuide
+                        textGuide.text = result.data.kyung.textGuide
+                        img.image = UIImage(named: "경회루가이드이미지.jpg")
+                    }
+                } catch let error {
+                    print(error.localizedDescription)
+                }
+            
             }
         }
     }
@@ -57,9 +78,7 @@ class GuideViewController: UIViewController {
     */
     
     func test() {
-//        let fileName = name.text! + "오디오가이드"
-        
-        let url = Bundle.main.url(forResource: "근정전오디오가이드", withExtension: "mp3")
+        let url = Bundle.main.url(forResource: audioName, withExtension: "mp3")
         
         if let url = url {
             
