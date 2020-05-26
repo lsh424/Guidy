@@ -136,9 +136,7 @@ extension ImgCfViewController: CameraFeedManagerDelegate {
     // Pass the pixel buffer to TensorFlow Lite to perform inference.
     result = modelDataHandler?.runModel(onFrame: pixelBuffer)
     
-    print("결과: \(result)")
-    
-    print("첫번째 열 \(result!.inferences[0].confidence)")
+    print(result)
     
     if result!.inferences[0].confidence > 0.8 {
         DispatchQueue.main.async {
