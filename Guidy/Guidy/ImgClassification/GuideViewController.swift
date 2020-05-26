@@ -16,21 +16,19 @@ class GuideViewController: UIViewController {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var textGuide: UITextView!
     @IBOutlet weak var audioGuideBtn: UIButton!
+    @IBOutlet weak var slider: UISlider!
     
-    var isplay = 0
+    var isplay = false
     var name: String?
     var audioName: String?
+    var timer: Timer?
+    lazy var player =  AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = name
         
-//        let imgName = name.text! + "가이드이미지"
-//        img.image = UIImage(named: imgName)
-//        
-////        textGuide.text = 
-//
         let path = Bundle.main.path(forResource: "guideData", ofType: "json")
         
         if let contents = try? String(contentsOfFile: path!) {
@@ -58,61 +56,62 @@ class GuideViewController: UIViewController {
                 } catch let error {
                     print(error.localizedDescription)
                 }
-            
+            }
+        }
+        
+        let url = Bundle.main.url(forResource: audioName, withExtension: "mp3")
+        if let url = url {
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                slider.maximumValue = Float((player.duration))
+                player.prepareToPlay() //재생 준비 -> 버퍼를 미리 로드하고 재생에 필요한 하드웨어를 가져옴
+            } catch let error {
+                print(error.localizedDescription)
             }
         }
     }
     
     @IBAction func didPressAudioPlayBtn(_ sender: Any) {
-        test()
+        play()
     }
-    
-    /*
-    if (player.playing == true) {
-        player.stop()
-        playPauseButtonOutlet.setImage(UIImage(named: "play.jpg"), forState: UIControlState.Normal)
-    } else {
-        player.play()
-        playPauseButtonOutlet.setImage(UIImage(named: "pause.jpg"), forState: UIControlState.Normal)
-    }
-    */
-    
-    func test() {
-        let url = Bundle.main.url(forResource: audioName, withExtension: "mp3")
         
-        if let url = url {
-            
-            do {
-                soundEffect = try AVAudioPlayer(contentsOf: url)
-                
-                guard let sound = soundEffect else {
-                    return
-                }
-                
-                sound.prepareToPlay() //재생 준비 ? -> 버퍼를 미리 로드하고 재생에 필요한 하드웨어를 가져옴?
-                
-                if isplay == 0 {
-                    sound.play()
-                    isplay = 1
-                    if #available(iOS 13.0, *) {
-                        audioGuideBtn.setImage(UIImage(systemName: "pause"), for: .normal)
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                } else {
-                    sound.pause()
-                    isplay = 0
-                    if #available(iOS 13.0, *) {
-                        audioGuideBtn.setImage(UIImage(systemName: "play"), for: .normal)
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
+    @IBAction func slide(_ sender: Any) {
+        player.currentTime = TimeInterval(slider.value)
+    }
+    
+    @objc func updateSlider() {
+        slider.value = Float(player.currentTime)
+        if slider.value > slider.maximumValue - 0.1 {
+            audioGuideBtn.setImage(UIImage(systemName: "play"), for: .normal)
+            isplay = false
         }
     }
     
+    func play() {
+        guard slider.value != slider.maximumValue else {
+            slider.value = slider.minimumValue
+            return
+        }
+                
+        if !isplay{
+            player.play()
+            isplay = true
+            timer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
+            
+            if #available(iOS 13.0, *) {
+                audioGuideBtn.setImage(UIImage(systemName: "pause"), for: .normal)
+                } else {
+                    // Fallback on earlier versions
+                }
+        } else {
+            player.stop()
+            timer?.invalidate()
+            isplay = false
+                if #available(iOS 13.0, *) {
+                    audioGuideBtn.setImage(UIImage(systemName: "play"), for: .normal)
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+    }
 }

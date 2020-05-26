@@ -31,6 +31,7 @@
 		D1537C86246D28C6004A6BEF /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C7F246D28C6004A6BEF /* SCNVector3+Extensions.swift */; };
 		D1537C87246D28C6004A6BEF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C80246D28C6004A6BEF /* UIImageView.swift */; };
 		D1537C88246D28C6004A6BEF /* Float4x4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C81246D28C6004A6BEF /* Float4x4+Extensions.swift */; };
+		D1C782E6247B9BEE003777DE /* converted_model2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D1C782E5247B9BE0003777DE /* converted_model2.tflite */; };
 		D1ECC6C524767D600047A069 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C424767D600047A069 /* DrawingViewController.swift */; };
 		D1ECC6CC24767D890047A069 /* SearchARViewContollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C624767D880047A069 /* SearchARViewContollerViewController.swift */; };
 		D1ECC6CD24767D890047A069 /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C724767D880047A069 /* ImageViewerController.swift */; };
@@ -44,7 +45,6 @@
 		D1ECC70E247687670047A069 /* ImgCfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC703247687670047A069 /* ImgCfViewController.swift */; };
 		D1ECC70F247687670047A069 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC704247687670047A069 /* CVPixelBufferExtension.swift */; };
 		D1ECC710247687670047A069 /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC706247687670047A069 /* labels.txt */; };
-		D1ECC711247687670047A069 /* converted_model2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D1ECC707247687670047A069 /* converted_model2.tflite */; };
 		D1ECC712247687670047A069 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC708247687670047A069 /* GuideViewController.swift */; };
 		D1ECC713247687670047A069 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC70A247687670047A069 /* PreviewView.swift */; };
 		D1ECC714247687670047A069 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC70B247687670047A069 /* CameraFeedManager.swift */; };
@@ -79,6 +79,7 @@
 		D1537C7F246D28C6004A6BEF /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
 		D1537C80246D28C6004A6BEF /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		D1537C81246D28C6004A6BEF /* Float4x4+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float4x4+Extensions.swift"; sourceTree = "<group>"; };
+		D1C782E5247B9BE0003777DE /* converted_model2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = converted_model2.tflite; sourceTree = "<group>"; };
 		D1ECC6C424767D600047A069 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		D1ECC6C624767D880047A069 /* SearchARViewContollerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchARViewContollerViewController.swift; sourceTree = "<group>"; };
 		D1ECC6C724767D880047A069 /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerController.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		D1ECC703247687670047A069 /* ImgCfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgCfViewController.swift; sourceTree = "<group>"; };
 		D1ECC704247687670047A069 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
 		D1ECC706247687670047A069 /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
-		D1ECC707247687670047A069 /* converted_model2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = converted_model2.tflite; sourceTree = "<group>"; };
 		D1ECC708247687670047A069 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		D1ECC70A247687670047A069 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		D1ECC70B247687670047A069 /* CameraFeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				D1ECC706247687670047A069 /* labels.txt */,
-				D1ECC707247687670047A069 /* converted_model2.tflite */,
+				D1C782E5247B9BE0003777DE /* converted_model2.tflite */,
 			);
 			path = CNN;
 			sourceTree = "<group>";
@@ -338,9 +338,9 @@
 				D114A9B02472B6C800E17BA4 /* 강녕전오디오가이드.mp3 in Resources */,
 				D114A9A82472B6AF00E17BA4 /* 강녕전가이드이미지.jpeg in Resources */,
 				D114A9B12472B6C800E17BA4 /* 경회루오디오가이드.mp3 in Resources */,
+				D1C782E6247B9BEE003777DE /* converted_model2.tflite in Resources */,
 				D114A9AA2472B6AF00E17BA4 /* 근정전오디오가이드.mp3 in Resources */,
 				D114A9AB2472B6AF00E17BA4 /* 광화문가이드이미지.jpg in Resources */,
-				D1ECC711247687670047A069 /* converted_model2.tflite in Resources */,
 				D1ECC6F2247687150047A069 /* Main.storyboard in Resources */,
 				D1537C66246ABE4F004A6BEF /* Assets.xcassets in Resources */,
 				D1ECC710247687670047A069 /* labels.txt in Resources */,
