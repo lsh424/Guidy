@@ -9,66 +9,43 @@
 import SceneKit
 
 enum StrokeColor: String {
-    case red = "red"
-    case blue = "blue"
     case white = "white"
-    case black = "black"
+    case selectedColor = "selectedColor"
 }
 
 func getReferenceSphereNode(forStrokeColor color: StrokeColor) ->  SCNNode {
     switch color {
-    case .red:
-        return redSphereNode
-    case .blue:
-        return blueSphereNode
     case .white:
         return whiteSphereNode
-    case .black:
-        return blackSphereNode
+    case .selectedColor:
+        return selectedColorNode
     }
 }
 
-var radius: CGFloat = 0.015 {
+var radius: CGFloat = 0.005 {
     didSet{
-        let whiteSphere = SCNSphere(radius: radius)
-        whiteSphere.firstMaterial?.diffuse.contents = UIColor.white
-        whiteSphereNode = SCNNode(geometry: whiteSphere)
-        
-        let redSphere = SCNSphere(radius: radius)
-        redSphere.firstMaterial?.diffuse.contents = UIColor.red
-        redSphereNode = SCNNode(geometry: redSphere)
-        
-        let blackSphere = SCNSphere(radius: radius)
-        blackSphere.firstMaterial?.diffuse.contents = UIColor.black
-        blackSphereNode = SCNNode(geometry: blackSphere)
-        
-        let blueSphere = SCNSphere(radius: radius)
-        blueSphere.firstMaterial?.diffuse.contents = UIColor.blue
-        blueSphereNode = SCNNode(geometry: blueSphere)
+        let sphere = SCNSphere(radius: radius)
+        sphere.firstMaterial?.diffuse.contents = color
+        selectedColorNode = SCNNode(geometry: sphere)
     }
 }
 
-var redSphereNode: SCNNode = {
-    let sphere = SCNSphere(radius: radius)
-    sphere.firstMaterial?.diffuse.contents = UIColor.red
-    return SCNNode(geometry: sphere)
-}()
-
-var blueSphereNode: SCNNode = {
-    let sphere = SCNSphere(radius: radius)
-    sphere.firstMaterial?.diffuse.contents = UIColor.blue
-    return SCNNode(geometry: sphere)
-}()
+var color: UIColor = UIColor.white {
+    didSet{
+        let sphere = SCNSphere(radius: radius)
+        sphere.firstMaterial?.diffuse.contents = color
+        selectedColorNode = SCNNode(geometry: sphere)
+    }
+}
 
 var whiteSphereNode: SCNNode = {
-    print("white node \(radius)")
-    let sphere = SCNSphere(radius: radius) // 0.03 -> 40, 0.025 -> 30, 0.015 -> 25, -> 20, -> 15
+    let sphere = SCNSphere(radius: radius)
     sphere.firstMaterial?.diffuse.contents = UIColor.white
     return SCNNode(geometry: sphere)
 }()
 
-var blackSphereNode: SCNNode = {
+var selectedColorNode: SCNNode = {
     let sphere = SCNSphere(radius: radius)
-    sphere.firstMaterial?.diffuse.contents = UIColor.black
+    sphere.firstMaterial?.diffuse.contents = UIColor.white
     return SCNNode(geometry: sphere)
 }()

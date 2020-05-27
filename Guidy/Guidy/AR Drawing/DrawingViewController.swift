@@ -12,28 +12,22 @@ import SceneKit
 import CoreLocation
 import Alamofire
 
-enum optionType {
-    case size
-    case color
-}
-
 class DrawingViewController: UIViewController,ARSCNViewDelegate {
     
     @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet weak var drawingOptionStackView: UIStackView!
     @IBOutlet weak var drawingOptionButton: UIButton!
     
     @IBOutlet weak var trackingStateView: UIView!
     @IBOutlet weak var trackingStateTitle: UILabel!
     @IBOutlet weak var trackingStateMessage: UILabel!
-    @IBOutlet var dotSizeAndColorButtons: [RoundButton]!
+    
+    @IBOutlet weak var changeSizeSlider: UISlider!
+    
+    @IBOutlet weak var drawingOptionView: UIView!
     
     var previousPoint: SCNVector3?
     var currentFingerPosition: CGPoint?
-    
-    var whiteBallCount = 0
-    var sphereCountLabel: UILabel!
-    
+        
     var strokeAnchorIDs: [UUID] = []
     var currentStrokeAnchorNode: SCNNode?
     
@@ -45,15 +39,12 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
     
     var location: CLLocationCoordinate2D?
     var altitude: CLLocationDistance?
-    var optionType: optionType?
     var optionButtonColor: UIColor? = .white
+    var isPressed = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let longPressGestureForDrawing = UILongPressGestureRecognizer(target: self, action: #selector(longPressOptionButton))
-        
-        drawingOptionButton.addGestureRecognizer(longPressGestureForDrawing)
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -64,25 +55,12 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
 
         sceneView.delegate = self
         sceneView.session.delegate = self
-
-        sphereCountLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 100, height: 40))
-        sphereCountLabel.textColor = UIColor.purple
-        sphereCountLabel.isHidden = false
                     
         let scene = SCNScene()
         sceneView.scene = scene
                 
         sceneView.session.run(configuration)
-    }
-    
-    @objc func longPressOptionButton(gesture: UILongPressGestureRecognizer) {
-        drawingOptionStackView.isHidden = false
-        optionType = .color
         
-        dotSizeAndColorButtons[0].backgroundColor = .red
-        dotSizeAndColorButtons[1].backgroundColor = .blue
-        dotSizeAndColorButtons[2].backgroundColor = .black
-        dotSizeAndColorButtons[3].backgroundColor = .white
     }
     
     @IBAction func didPressDelete(_ sender: Any) {
@@ -117,55 +95,34 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
         
         sceneView.session.remove(anchor: curentStrokeAnchor)
 
-        // add this?
         currentStrokeAnchorNode = nil
     }
     
     @IBAction func didPressDrawingOption(_ sender: Any) {
-        drawingOptionStackView.isHidden = false
-        optionType = .size
-        
-        for button in dotSizeAndColorButtons {
-            button.backgroundColor = optionButtonColor
+        if !isPressed {
+            drawingOptionView.isHidden = false
+            isPressed = true
+        } else {
+            drawingOptionView.isHidden = true
+            isPressed = false
         }
     }
     
     
-    @IBAction func didPressDotAndColor(_ sender: RoundButton) {
-        if optionType == .size {
-            switch sender {
-            case dotSizeAndColorButtons[0]:
-                radius = 0.01
-            case dotSizeAndColorButtons[1]:
-                radius = 0.015
-            case dotSizeAndColorButtons[2]:
-                radius = 0.02
-            default:
-                radius = 0.025
-            }
-        } else if optionType == .color {
-            switch sender {
-            case dotSizeAndColorButtons[0]:
-                currentStrokeColor = .red
-                optionButtonColor = .red
-            case dotSizeAndColorButtons[1]:
-                currentStrokeColor = .blue
-                optionButtonColor = .blue
-            case dotSizeAndColorButtons[2]:
-                currentStrokeColor = .black
-                optionButtonColor = .black
-            default:
-                currentStrokeColor = .white
-                optionButtonColor = .white
-            }
-        }
-        
-        drawingOptionButton.tintColor = optionButtonColor
-        drawingOptionStackView.isHidden = true
+    @IBAction func didPressColorBtns(_ sender: RoundButton) {
+        currentStrokeColor = .selectedColor
+        color = sender.backgroundColor!
+        changeSizeSlider.thumbTintColor = sender.backgroundColor
+        changeSizeSlider.tintColor = sender.backgroundColor
+        drawingOptionButton.tintColor = sender.backgroundColor
     }
+    
+    @IBAction func changeSize(_ sender: UISlider) {
+        radius = CGFloat(sender.value)
+    }
+    
     
     override func viewDidLayoutSubviews() {
-        
          // ARCL
          super.viewDidLayoutSubviews()
          sceneView.frame = view.bounds
@@ -230,7 +187,6 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
         newSphereNode.position = localPosition
         currentStrokeNode.addChildNode(newSphereNode)
         strokeAnchor.sphereLocations.append([newSphereNode.position.x, newSphereNode.position.y, newSphereNode.position.z])
-        whiteBallCount += 1
     }
     
     // MARK:- Touches
@@ -323,10 +279,6 @@ extension DrawingViewController: ARSessionDelegate {
                 } else {
                     createSphereAndInsert(atPosition: currentPointPosition, andAddToStrokeAnchor: currentStrokeAnchor!)
                     self.previousPoint = currentPointPosition
-                }
-                
-                DispatchQueue.main.async {
-                    self.sphereCountLabel.text = "\(self.whiteBallCount)"
                 }
             }
         }
