@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dpi-ss-Fo9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y0k-Jq-QM7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -360,7 +360,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jrc-dU-IqR"/>
                     <connections>
-                        <outlet property="changeSizeSlider" destination="zqj-3C-m0Z" id="c3R-4U-vxS"/>
+                        <outlet property="dotSizeSlider" destination="zqj-3C-m0Z" id="JD8-nd-RRJ"/>
                         <outlet property="drawingOptionButton" destination="oUw-dz-IH3" id="wjw-9j-lGA"/>
                         <outlet property="drawingOptionView" destination="Oat-qS-KpE" id="cjb-M2-1pb"/>
                         <outlet property="sceneView" destination="1Wh-n6-ide" id="hO3-Jq-XNL"/>
@@ -386,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbt-rw-Zho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3196" y="119"/>
+            <point key="canvasLocation" x="3938" y="128"/>
         </scene>
         <!--Image Viewer Controller-->
         <scene sceneID="PCB-qx-Rx8">
@@ -474,7 +474,216 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jb0-o0-Ush" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3948" y="119"/>
+            <point key="canvasLocation" x="4684" y="128"/>
+        </scene>
+        <!--Editing View Controller-->
+        <scene sceneID="lte-Ut-uXa">
+            <objects>
+                <viewController id="y0k-Jq-QM7" customClass="EditingViewController" customModule="Guidy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h0u-Fq-T5Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mpQ-RY-ZOR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="afsdafdsfsdafdsf" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7UM-Co-Kri">
+                                <rect key="frame" x="87" y="297" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VxZ-QN-aiN" appends="YES" id="PZ8-mt-ILA"/>
+                                </connections>
+                            </textView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWI-VX-G3b">
+                                <rect key="frame" x="20" y="452" width="374" height="130"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="8" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="lNu-U6-BCr">
+                                        <rect key="frame" x="15" y="33.5" width="344" height="32"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="changeFontSize:" destination="y0k-Jq-QM7" eventType="valueChanged" id="wn1-rc-ELS"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Op-VB-vPx">
+                                        <rect key="frame" x="17" y="8" width="29.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="색상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3w-Nt-byu">
+                                        <rect key="frame" x="17" y="69.5" width="29.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sgE-9m-TfZ">
+                                        <rect key="frame" x="17" y="95" width="340" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdq-8A-EfB" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeFontColor:" destination="y0k-Jq-QM7" eventType="touchUpInside" id="BdG-tc-Wn7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGG-jX-7gM" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
+                                                <rect key="frame" x="44.5" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeFontColor:" destination="y0k-Jq-QM7" eventType="touchUpInside" id="h3g-hQ-LRE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goh-1e-xKF" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
+                                                <rect key="frame" x="88.5" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.9228722453" green="0.77102452519999998" blue="0.411681354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeFontColor:" destination="y0k-Jq-QM7" eventType="touchUpInside" id="1tk-54-h88"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOE-al-wOy" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
+                                                <rect key="frame" x="133" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.85648983720000005" green="0.33329802749999998" blue="0.35685139890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeFontColor:" destination="y0k-Jq-QM7" eventType="touchUpInside" id="52Y-mw-Up9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGV-z8-Qth" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
+                                                <rect key="frame" x="177" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.92992907759999999" green="0.57382452490000002" blue="0.28226894139999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeFontColor:" destination="y0k-Jq-QM7" eventType="touchUpInside" id="pil-RW-ORw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWg-ls-cTA" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
+                                                <rect key="frame" x="221.5" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.2993082702" green="0.53494369980000001" blue="0.83924990889999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeFontColor:" destination="y0k-Jq-QM7" eventType="touchUpInside" id="sGG-2t-JrQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKF-5a-Cdu" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
+                                                <rect key="frame" x="265.5" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.5075762868" green="0.73949491980000004" blue="0.36854916809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeFontColor:" destination="y0k-Jq-QM7" eventType="touchUpInside" id="Oe0-eO-Zg9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gj3-Kw-CPB" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
+                                                <rect key="frame" x="310" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.59192468730000003" green="0.1260959371" blue="0.7179572514" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeFontColor:" destination="y0k-Jq-QM7" eventType="touchUpInside" id="lAt-UG-UTM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="2tU-p9-gZO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="8ex-UQ-NQE"/>
+                                    <constraint firstItem="lNu-U6-BCr" firstAttribute="leading" secondItem="lWI-VX-G3b" secondAttribute="leading" constant="17" id="Cbt-RT-d6K"/>
+                                    <constraint firstItem="sgE-9m-TfZ" firstAttribute="leading" secondItem="lWI-VX-G3b" secondAttribute="leading" constant="17" id="OKa-L9-wdB"/>
+                                    <constraint firstAttribute="trailing" secondItem="sgE-9m-TfZ" secondAttribute="trailing" constant="17" id="OeE-HS-QvG"/>
+                                    <constraint firstItem="n3w-Nt-byu" firstAttribute="leading" secondItem="lWI-VX-G3b" secondAttribute="leading" constant="17" id="Rfm-o7-MiL"/>
+                                    <constraint firstItem="n3w-Nt-byu" firstAttribute="top" secondItem="lNu-U6-BCr" secondAttribute="bottom" constant="5" id="RmO-u4-jOF"/>
+                                    <constraint firstAttribute="trailing" secondItem="lNu-U6-BCr" secondAttribute="trailing" constant="17" id="XIU-Pi-rdd"/>
+                                    <constraint firstItem="sgE-9m-TfZ" firstAttribute="top" secondItem="n3w-Nt-byu" secondAttribute="bottom" constant="5" id="bFc-h6-PDt"/>
+                                    <constraint firstItem="2Op-VB-vPx" firstAttribute="leading" secondItem="lWI-VX-G3b" secondAttribute="leading" constant="17" id="g7U-ix-lAt"/>
+                                    <constraint firstItem="lNu-U6-BCr" firstAttribute="top" secondItem="2Op-VB-vPx" secondAttribute="bottom" constant="5" id="hPs-4b-yY3"/>
+                                    <constraint firstItem="2Op-VB-vPx" firstAttribute="top" secondItem="lWI-VX-G3b" secondAttribute="top" constant="8" id="hfc-mc-ydN"/>
+                                    <constraint firstAttribute="bottom" secondItem="sgE-9m-TfZ" secondAttribute="bottom" constant="5" id="ryF-pt-uO8"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-T8-lD2">
+                                <rect key="frame" x="354" y="64" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9lb-7H-4R0"/>
+                                    <constraint firstAttribute="width" constant="40" id="dkf-iI-FqG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8oL-3f-QYh" firstAttribute="trailing" secondItem="lWI-VX-G3b" secondAttribute="trailing" constant="20" id="2Kg-a0-0ks"/>
+                            <constraint firstItem="mpQ-RY-ZOR" firstAttribute="leading" secondItem="8oL-3f-QYh" secondAttribute="leading" id="FyR-fX-mvS"/>
+                            <constraint firstItem="8oL-3f-QYh" firstAttribute="trailing" secondItem="aO0-T8-lD2" secondAttribute="trailing" constant="20" id="Gf1-3d-TYo"/>
+                            <constraint firstItem="aO0-T8-lD2" firstAttribute="top" secondItem="8oL-3f-QYh" secondAttribute="top" constant="20" id="SRO-sG-dRj"/>
+                            <constraint firstItem="lWI-VX-G3b" firstAttribute="leading" secondItem="8oL-3f-QYh" secondAttribute="leading" constant="20" id="bOu-pX-L5L"/>
+                            <constraint firstItem="8oL-3f-QYh" firstAttribute="bottom" secondItem="mpQ-RY-ZOR" secondAttribute="bottom" id="qc5-IX-t1s"/>
+                            <constraint firstItem="8oL-3f-QYh" firstAttribute="trailing" secondItem="mpQ-RY-ZOR" secondAttribute="trailing" id="rs9-75-y1t"/>
+                            <constraint firstAttribute="bottom" secondItem="lWI-VX-G3b" secondAttribute="bottom" constant="314" id="tVD-KF-65k"/>
+                            <constraint firstItem="mpQ-RY-ZOR" firstAttribute="top" secondItem="8oL-3f-QYh" secondAttribute="top" id="xIX-Y5-gQg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8oL-3f-QYh"/>
+                    </view>
+                    <connections>
+                        <outlet property="botConstOfOptionView" destination="tVD-KF-65k" id="TC0-VG-HIW"/>
+                        <outlet property="fontSizeSlider" destination="lNu-U6-BCr" id="eyF-8l-Aj6"/>
+                        <outlet property="imageView" destination="mpQ-RY-ZOR" id="GK4-fx-9Z6"/>
+                        <outlet property="optionView" destination="lWI-VX-G3b" id="LR0-UZ-iDs"/>
+                        <outlet property="textView" destination="7UM-Co-Kri" id="yG4-fR-YiS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94U-bR-SYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="VxZ-QN-aiN">
+                    <connections>
+                        <action selector="dragTextView:" destination="y0k-Jq-QM7" id="RM5-Uo-Bnu"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3195.6521739130435" y="127.90178571428571"/>
         </scene>
         <!--이름-->
         <scene sceneID="KGr-Nj-Zyu">
@@ -565,134 +774,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vdg-tS-QTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3197" y="794"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Kbx-lM-GZp">
-            <objects>
-                <viewController id="h6Q-U0-A2R" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jV5-hm-pnX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7W-rk-sjn">
-                                <rect key="frame" x="54" y="577" width="307" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pFd-Iz-L80">
-                                        <rect key="frame" x="15" y="28" width="277" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="크기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNh-FO-Nik">
-                                        <rect key="frame" x="17" y="8" width="30" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="색상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPw-ns-Uuf">
-                                        <rect key="frame" x="17" y="65" width="30" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="syN-NQ-Yyg">
-                                        <rect key="frame" x="12" y="94" width="294" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-JW-9gg" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMh-AV-NSC" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="33" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-gf-ZyN" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="66" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01I-oc-LEW" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="99" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpV-hL-x9G" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="132" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFG-qh-wKp" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="165" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coO-Ix-5uY" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="198" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqz-Nl-7Pq" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="231" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtT-7K-Gac" customClass="RoundButton" customModule="Guidy" customModuleProvider="target">
-                                                <rect key="frame" x="264" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ubK-3c-ODE"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uoV-bc-8fO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4692.753623188406" y="118.52678571428571"/>
         </scene>
         <!--이미지 인식-->
         <scene sceneID="UD1-VN-nQP">
