@@ -21,7 +21,8 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
     @IBOutlet weak var trackingStateTitle: UILabel!
     @IBOutlet weak var trackingStateMessage: UILabel!
     
-    @IBOutlet weak var changeSizeSlider: UISlider!
+    @IBOutlet weak var dotSizeSlider: UISlider!
+    
     
     @IBOutlet weak var drawingOptionView: UIView!
     
@@ -44,6 +45,8 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        drawingOptionView.layer.cornerRadius = self.view.frame.width / 20
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -112,8 +115,8 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
     @IBAction func didPressColorBtns(_ sender: RoundButton) {
         currentStrokeColor = .selectedColor
         color = sender.backgroundColor!
-        changeSizeSlider.thumbTintColor = sender.backgroundColor
-        changeSizeSlider.tintColor = sender.backgroundColor
+        dotSizeSlider.thumbTintColor = sender.backgroundColor
+        dotSizeSlider.tintColor = sender.backgroundColor
         drawingOptionButton.tintColor = sender.backgroundColor
     }
     
