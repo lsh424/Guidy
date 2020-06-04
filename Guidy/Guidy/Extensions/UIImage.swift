@@ -37,4 +37,18 @@ extension UIImage {
         let scaledSize = CGSize(width: size.width * scale, height: size.height * scale)
         return UIImage.resize(image: image, targetSize: scaledSize)
     }
+    
+    class func createImageWithTextView(_ imgView: UIImageView, _ textView: UITextView) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: imgView.frame.size.width, height: imgView.frame.size.height), false, 2.0)
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: imgView.frame.size.width, height: imgView.frame.size.height))
+        
+        imageView.image = imgView.image
+        
+        imageView.addSubview(textView)
+        imageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
+    }
 }
