@@ -138,14 +138,14 @@ extension ImgCfViewController: CameraFeedManagerDelegate {
     
     print(result)
     
-    if result!.inferences[0].confidence > 0.8 {
+    if result!.inferences[0].confidence > 0.9 {
         DispatchQueue.main.async {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "GuideVC") as! GuideViewController
-            
+
             guard self.result?.inferences[0].label != "땅" && self.result?.inferences[0].label != "하늘" else{
                 return
             }
-            
+
             vc.name = self.result!.inferences[0].label
             self.navigationController?.pushViewController(vc, animated: true)
             //   vc.modalPresentationStyle = .fullScreen
