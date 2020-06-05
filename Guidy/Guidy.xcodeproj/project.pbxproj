@@ -32,9 +32,9 @@
 		D1537C86246D28C6004A6BEF /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C7F246D28C6004A6BEF /* SCNVector3+Extensions.swift */; };
 		D1537C87246D28C6004A6BEF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C80246D28C6004A6BEF /* UIImageView.swift */; };
 		D1537C88246D28C6004A6BEF /* Float4x4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1537C81246D28C6004A6BEF /* Float4x4+Extensions.swift */; };
-		D1C782E6247B9BEE003777DE /* converted_model2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D1C782E5247B9BE0003777DE /* converted_model2.tflite */; };
+		D186C9DA2488126A00B181B7 /* converted_model4.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D186C9D92488126A00B181B7 /* converted_model4.tflite */; };
 		D1ECC6C524767D600047A069 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C424767D600047A069 /* DrawingViewController.swift */; };
-		D1ECC6CC24767D890047A069 /* SearchARViewContollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C624767D880047A069 /* SearchARViewContollerViewController.swift */; };
+		D1ECC6CC24767D890047A069 /* SearchARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C624767D880047A069 /* SearchARViewController.swift */; };
 		D1ECC6CD24767D890047A069 /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C724767D880047A069 /* ImageViewerController.swift */; };
 		D1ECC6CE24767D890047A069 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C824767D890047A069 /* RoundButton.swift */; };
 		D1ECC6CF24767D890047A069 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC6C924767D890047A069 /* Utilities.swift */; };
@@ -81,9 +81,9 @@
 		D1537C7F246D28C6004A6BEF /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
 		D1537C80246D28C6004A6BEF /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		D1537C81246D28C6004A6BEF /* Float4x4+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float4x4+Extensions.swift"; sourceTree = "<group>"; };
-		D1C782E5247B9BE0003777DE /* converted_model2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = converted_model2.tflite; sourceTree = "<group>"; };
+		D186C9D92488126A00B181B7 /* converted_model4.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = converted_model4.tflite; sourceTree = "<group>"; };
 		D1ECC6C424767D600047A069 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
-		D1ECC6C624767D880047A069 /* SearchARViewContollerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchARViewContollerViewController.swift; sourceTree = "<group>"; };
+		D1ECC6C624767D880047A069 /* SearchARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchARViewController.swift; sourceTree = "<group>"; };
 		D1ECC6C724767D880047A069 /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerController.swift; sourceTree = "<group>"; };
 		D1ECC6C824767D890047A069 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		D1ECC6C924767D890047A069 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 			children = (
 				D1ECC6C424767D600047A069 /* DrawingViewController.swift */,
 				D11735C42485140100216420 /* EditingViewController.swift */,
-				D1ECC6C624767D880047A069 /* SearchARViewContollerViewController.swift */,
+				D1ECC6C624767D880047A069 /* SearchARViewController.swift */,
 				D1ECC6C724767D880047A069 /* ImageViewerController.swift */,
 				D1ECC6CB24767D890047A069 /* SphereNodes.swift */,
 				D1ECC6CA24767D890047A069 /* StrokeAnchor.swift */,
@@ -255,8 +255,8 @@
 		D1ECC705247687670047A069 /* CNN */ = {
 			isa = PBXGroup;
 			children = (
+				D186C9D92488126A00B181B7 /* converted_model4.tflite */,
 				D1ECC706247687670047A069 /* labels.txt */,
-				D1C782E5247B9BE0003777DE /* converted_model2.tflite */,
 			);
 			path = CNN;
 			sourceTree = "<group>";
@@ -341,7 +341,6 @@
 				D114A9B02472B6C800E17BA4 /* 강녕전오디오가이드.mp3 in Resources */,
 				D114A9A82472B6AF00E17BA4 /* 강녕전가이드이미지.jpeg in Resources */,
 				D114A9B12472B6C800E17BA4 /* 경회루오디오가이드.mp3 in Resources */,
-				D1C782E6247B9BEE003777DE /* converted_model2.tflite in Resources */,
 				D114A9AA2472B6AF00E17BA4 /* 근정전오디오가이드.mp3 in Resources */,
 				D114A9AB2472B6AF00E17BA4 /* 광화문가이드이미지.jpg in Resources */,
 				D1ECC6F2247687150047A069 /* Main.storyboard in Resources */,
@@ -350,6 +349,7 @@
 				D114A9A22472B6A100E17BA4 /* guideData.json in Resources */,
 				D114A9AC2472B6AF00E17BA4 /* 경회루가이드이미지.jpg in Resources */,
 				D1ECC716247687BC0047A069 /* LaunchScreen.storyboard in Resources */,
+				D186C9DA2488126A00B181B7 /* converted_model4.tflite in Resources */,
 				D114A9A92472B6AF00E17BA4 /* 근정전가이드이미지.jpg in Resources */,
 				D114A9B22472B6C800E17BA4 /* 광화문오디오가이드.mp3 in Resources */,
 			);
@@ -406,7 +406,7 @@
 				D1ECC714247687670047A069 /* CameraFeedManager.swift in Sources */,
 				D11735C52485140100216420 /* EditingViewController.swift in Sources */,
 				D1537C77246D2899004A6BEF /* Img_loca.swift in Sources */,
-				D1ECC6CC24767D890047A069 /* SearchARViewContollerViewController.swift in Sources */,
+				D1ECC6CC24767D890047A069 /* SearchARViewController.swift in Sources */,
 				D1537C86246D28C6004A6BEF /* SCNVector3+Extensions.swift in Sources */,
 				D1ECC70F247687670047A069 /* CVPixelBufferExtension.swift in Sources */,
 				D1537C84246D28C6004A6BEF /* CGImagePropertyOrientation.swift in Sources */,
