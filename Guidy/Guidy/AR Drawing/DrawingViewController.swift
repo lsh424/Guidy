@@ -12,7 +12,12 @@ import SceneKit
 import CoreLocation
 import Alamofire
 
-class DrawingViewController: UIViewController,ARSCNViewDelegate {
+//protocol pushViewControllerDelegate {
+//    func pushVC()
+//}
+
+class DrawingViewController: UIViewController,ARSCNViewDelegate, pushViewControllerDelegate {
+
     
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var drawingOptionButton: UIButton!
@@ -77,15 +82,28 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
     
 
     @IBAction func didPressGallery(_ sender: Any) {
-       let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchArVC") as! SearchARViewContollerViewController
+       let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchArVC") as! SearchARViewContoller
         
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: true, completion: nil)
+       self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func didPressSave(_ sender: Any) {
-        let image = sceneView.snapshot()
-        NetworkManager().saveImage(lat: location!.latitude, lon: location!.longitude, altitude: altitude!, img: image)
+        let img = sceneView.snapshot()
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditingVC") as! EditingViewController
+        
+        vc.delegate = self
+        vc.image = img
+        vc.latitude = location!.latitude
+        vc.longitude = location!.longitude
+        vc.altitude = altitude!
+        
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+        
+//        NetworkManager().saveImage(lat: location!.latitude, lon: location!.longitude, altitude: altitude!, img: image)
     }
     
     @IBAction func didPressUndo(_ sender: Any) {
@@ -140,6 +158,11 @@ class DrawingViewController: UIViewController,ARSCNViewDelegate {
         super.viewWillDisappear(animated)
         
         sceneView.session.pause()
+    }
+    
+    func pushVC(_ controller: UIViewController) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchArVC") as! SearchARViewContoller
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
