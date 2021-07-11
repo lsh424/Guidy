@@ -4,8 +4,6 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>서비스 사용을 위해 카메라 접근을 요청합니다.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>AR 낙서기능 사용을 위해 위치정보를 수집합니다.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -43,6 +41,8 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

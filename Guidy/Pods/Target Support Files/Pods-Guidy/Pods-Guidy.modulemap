@@ -1,4 +1,4 @@
-module Pods_Guidy {
+framework module Pods_Guidy {
   umbrella header "Pods-Guidy-umbrella.h"
 
   export *
